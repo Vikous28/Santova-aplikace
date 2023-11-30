@@ -30,4 +30,7 @@
         </menus>
       </MenuBar>
    </top>
+   <left>
+      <Button mnemonicParsing="false" text="Button" BorderPane.alignment="CENTER" />
+   </left>
 </BorderPane>
