@@ -19,10 +19,15 @@ public class ImageUtils {
         BufferedImage bImage = new BufferedImage(600, 600, BufferedImage.TYPE_3BYTE_BGR);
         for (int x = 0; x < bImage.getWidth(); x++) {
             for (int y = 0; y < bImage.getHeight(); y++) {
-                bImage.setRGB(x, y, (new Color((x + 69) % 255, (x * 5) % 255, (x * y) % 255).getRGB()));
+                int mix = (x + y) / 2;
+
+                int red = (mix * 7) % 255;
+                int green = (mix * 5) % 255;
+                int blue = 255 - mix % 255;
+
+                bImage.setRGB(x, y, (new Color(red, green, blue).getRGB()));
             }
         }
         return bImage;
     }
-
 }

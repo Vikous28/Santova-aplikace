@@ -90,7 +90,6 @@ public class ImageController {
     private void generateImage() {
         BufferedImage image = makeColoredImage();
         imageView.setImage(SwingFXUtils.toFXImage(image, null));
-
         myImage = new MyImage(image, null, null);
     }
 
@@ -145,57 +144,6 @@ public class ImageController {
             imageView.setImage(SwingFXUtils.toFXImage(myImage.getOriginalImage(), null));
             imageView.setPreserveRatio(true);
         }
-    }
-
-    @FXML
-    private void showAboutUs() {
-        VBox vbox = new VBox();
-        vbox.setPrefWidth(300);
-        vbox.setPrefHeight(300);
-        vbox.setStyle("-fx-background-color: #FFFFFF;");
-        vbox.setSpacing(5);
-        vbox.setPadding(new javafx.geometry.Insets(10, 10, 10, 10));
-
-        Text title = new Text("O nás");
-
-        Text description = new Text("Vytvořeno s láskou pro PEPEho");
-
-        Text teamLabel = new Text("Tým: ");
-        teamLabel.setStyle("-fx-font-weight: bold;");
-
-        Text teamMembers = new Text("Ondřej Šteffan, Jenda Soukeník, David Vrtílek");
-        Text version = new Text("Verze: 1.0");
-
-        TextFlow textFlow = new TextFlow();
-        textFlow.getChildren().addAll(teamLabel, teamMembers, new Text("\n"), version);
-
-        vbox.getChildren().addAll(title, description, textFlow);
-
-        Stage stage = new Stage();
-        stage.setTitle("O nás");
-        stage.setScene(new Scene(vbox));
-        stage.show();
-    }
-
-    @FXML
-    private void showAboutApplication() {
-        VBox vbox = new VBox();
-        vbox.setPrefWidth(300);
-        vbox.setPrefHeight(300);
-        vbox.setStyle("-fx-background-color: #FFFFFF;");
-        vbox.setSpacing(5);
-        vbox.setPadding(new javafx.geometry.Insets(10, 10, 10, 10));
-
-        Label label = new Label("O aplikaci");
-        Label label1 = new Label("Aplikace splňuje všechny požadavky zadání.");
-        Label label3 = new Label("Version: 1.0");
-
-        vbox.getChildren().addAll(label, label1, label3);
-
-        Stage stage = new Stage();
-        stage.setTitle("O aplikaci");
-        stage.setScene(new Scene(vbox));
-        stage.show();
     }
 
     @FXML
